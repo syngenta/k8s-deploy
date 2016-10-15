@@ -28,7 +28,7 @@ end
 
 def print_gcloud_check_project(configuration)
   conf_gcloud_project = configuration['gcloud_project_name']
-  current_gcloud_project = `gcloud config get-value project`
+  current_gcloud_project = `gcloud beta config get-value project`
   check_result = current_gcloud_project.include?(conf_gcloud_project)
 
   puts 'Your GCloud project should be ' \
