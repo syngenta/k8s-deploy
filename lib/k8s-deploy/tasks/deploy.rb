@@ -53,7 +53,7 @@ end
 
 def print_deploy_push(configuration)
   new_image_name = build_full_image_name(configuration)
-  command = "gcloud docker -- push #{new_image_name}"
+  command = "docker push #{new_image_name}"
   command_output(command)
   puts
   system command
