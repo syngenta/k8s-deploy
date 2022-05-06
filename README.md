@@ -40,6 +40,7 @@ Configuration
 production: # environment name
   git_branch: master
   dockerfile: ./Dockerfile
+  docker_platform: linux/amd-64
   container_registry: gcr.io
   gcloud_project_name: your-gcloud-project-name
   kubernetes_context: your-cluster-context
