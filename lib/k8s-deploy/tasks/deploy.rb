@@ -44,7 +44,7 @@ def print_deploy_build(configuration)
   puts
 
   dockerfile_path = configuration['dockerfile']
-  command = "docker build -t #{new_image_name} -f #{dockerfile_path} ."
+  command = "docker buildx build --platform linux/amd64 -t #{new_image_name} -f #{dockerfile_path} ."
   command_output(command)
   puts
 
