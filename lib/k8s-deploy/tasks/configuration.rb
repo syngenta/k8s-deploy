@@ -1,6 +1,7 @@
 CONFIGURATION_OPTIONS = {
   'git_branch' => 'GIT branch',
   'dockerfile' => 'Path to Dockerfile',
+  'docker_platform' => 'Target platform, f.e linux/amd64 or linux/arm64',
   'container_registry' => 'Docker container registry',
   'gcloud_project_name' => 'GCloud project name',
   'kubernetes_context' => 'K8s context',
