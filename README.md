@@ -46,7 +46,7 @@ gem install k8s-deploy
 
 ```yml
 production: # environment name
-  git_branch: master
+  git_branch: main
   dockerfile: ./Dockerfile
   docker_platform: linux/amd64
   container_registry: gcr.io
