@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata = {
     'homepage_uri' => spec.homepage,
+    'changelog_uri' => 'https://github.com/syngenta/k8s-deploy/blob/main/CHANGELOG.md',
     'source_code_uri' => spec.homepage,
     'documentation_uri' => spec.homepage,
     'bug_tracker_uri' => 'https://github.com/syngenta/k8s-deploy/issues',
