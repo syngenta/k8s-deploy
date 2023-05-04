@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 DELIMITER_WIDTH = 80
 
 CONSOLE_COLORS = {
@@ -10,6 +12,7 @@ CONSOLE_COLORS = {
 # colorizing output
 def color_output(color)
   raise 'Wrong color name' unless CONSOLE_COLORS.key?(color)
+
   CONSOLE_COLORS[color] + yield.to_s + CONSOLE_COLORS[:no_color]
 end
 

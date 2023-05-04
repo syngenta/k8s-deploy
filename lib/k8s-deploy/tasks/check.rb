@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def print_git_check_branch(configuration)
   conf_branch = configuration['git_branch']
   local_branch = `git rev-parse --abbrev-ref HEAD`.strip

@@ -1,19 +1,28 @@
-K8s deploy
-=============
+# k8s-deploy — automate deployments to Google Kubernetes Engine
 
-Introduction
-------------
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Tasks](#tasks)
+- [Contributing](#contributing)
+- [License](#license)
 
-:bomb: **Important — this gem is not production ready.**
+## Introduction
 
-This gem provides bunch of useful **Rake** tasks to automate deploy to Kubernetes cluster in Google Container Engine.
+This gem provides a bunch of useful **Rake** tasks to automate deployment to the Kubernetes cluster in Google Kubernetes Engine (GKE):
 
-Installation
-------------
+- Show configuration for the environment.
+- Show the status of running Deployment & Pods.
+- Check GCloud/K8s configuration and GIT (branch, uncommitted changes, etc.).
+- Build a new Docker image, push it to the registry, and patch Deployment.
+- Rollback Deployment to the previous state.
+- Scale Deployment to the desired number of replicas.
+
+## Installation
 
 ### Bundler
 
-Add gem to your Gemfile:
+Add the gem to your Gemfile:
 
 ```ruby
 gem 'k8s-deploy'
@@ -23,18 +32,17 @@ gem 'k8s-deploy'
 
 Invoke the following command from your terminal:
 
-```bash
+```shell
 gem install k8s-deploy
 ```
 
-Configuration
--------------
+## Configuration
 
-1. You need to put `k8s-deploy.yml` file into your project root.
-2. Add `require 'k8s-deploy/tasks'` to your Rakefile.
+1. Put the `k8s-deploy.yml` configuration file into your project root.
+2. Add `require 'k8s-deploy/tasks'` line to your Rakefile.
 3. Check available tasks with `rake -T` command.
 
-##### Example of k8s-deploy.yml
+### Example of k8s-deploy.yml
 
 ```yml
 production: # environment name
@@ -51,15 +59,15 @@ production: # environment name
 
 You could add as many environments as you need (production, staging, test, etc.) to `k8s-deploy.yml`.
 
-##### Example of Rakefile
+### Example of Rakefile file
 
 ```ruby
 require 'k8s-deploy/tasks'
 ```
 
-##### Example of `rake -T` output
+### Example of `rake -T` output
 
-```bash
+```shell
 rake k8s:production:check                         # Check production ready for deploy
 rake k8s:production:check:gcloud                  # Check production GCloud
 rake k8s:production:check:git                     # Check production GIT
@@ -76,48 +84,60 @@ rake k8s:production:status:docker_image           # Show production K8s Deployme
 rake k8s:production:status:pods                   # Show production K8s Pods status
 ```
 
-Tasks
--------------
+## Tasks
 
 All tasks have next structure:
 
-```bash
+```shell
 rake k8s:<environment>:<main-task>:<sub-task>
 ```
 
 ### Main tasks
 
-Show configuration for environment:
-```bash
+Show configuration for the environment:
+
+```shell
 rake k8s:<environment>:configuration
 ```
 
-Show status of running Deployment & Pods:
-```bash
+Show the status of running Deployment & Pods:
+
+```shell
 rake k8s:<environment>:status
 ```
 
 Check GCloud/K8s configuration and GIT (branch, uncommitted changes, etc.):
-```bash
+
+```shell
 rake k8s:<environment>:check
 ```
 
-Build new Docker image, push to registry, patch Deployment:
-```bash
+Build a new Docker image, push it to the registry, and patch Deployment:
+
+```shell
 rake k8s:<environment>:deploy
 ```
 
-Rollback Deployment to previous state.
-```bash
+Rollback Deployment to the previous state.
+
+```shell
 rake k8s:<environment>:rollback
 ```
 
-Scale Deployment to desired number of replicas.
-```bash
+Scale Deployment to the desired number of replicas.
+
+```shell
 rake k8s:<environment>:scale[1]
 ```
 
-License
--------
+## Contributing
 
-The project uses the MIT License. See LICENSE.md for details.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/cropio/k8s-deploy](https://github.com/cropio/k8s-deploy).
+
+Please, check our [Contribution guide](CONTRIBUTING.md) for more details.
+
+This project adheres to the [Code of Conduct](CODE_OF_CONDUCT.md). We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
+
+## License
+
+The project uses the MIT License. See LICENSE for details.

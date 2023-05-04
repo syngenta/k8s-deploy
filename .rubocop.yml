@@ -1,0 +1,16 @@
+# We want Exclude directives from different
+# config files to get merged, not overwritten
+inherit_mode:
+  merge:
+    - Exclude
+
+inherit_from:
+  # Load configurations
+  - .rubocop_todo.yml
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.0
+
+Layout/LineLength:
+  Max: 120

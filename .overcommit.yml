@@ -1,0 +1,29 @@
+PreCommit:
+  ALL:
+    on_warn: fail
+  BundleCheck:
+    enabled: true
+  FileSize:
+    enabled: true
+    size_limit_bytes: 1_000_000
+  ForbiddenBranches:
+    enabled: true
+  LineEndings:
+    enabled: true
+  RuboCop:
+    enabled: true
+  TrailingWhitespace:
+    enabled: true
+  YamlSyntax:
+    enabled: true
+
+CommitMsg:
+  ALL:
+    on_warn: fail
+  # Disable some default Overcommit checks to avoid collisions with commitlint.
+  TextWidth:
+    enabled: false
+  CapitalizedSubject:
+    enabled: false
+  SingleLineSubject:
+    enabled: false

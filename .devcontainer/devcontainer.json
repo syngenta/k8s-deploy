@@ -1,0 +1,73 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ruby
+{
+	"name": "Ruby",
+
+	"image": "mcr.microsoft.com/devcontainers/ruby:0-3.2",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "bundle && bundle exec overcommit --install",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "root",
+
+    "customizations": {
+		"vscode": {
+			"settings": {
+				// Basic formatting settings.
+				"files.trimTrailingWhitespace": true,
+				"files.insertFinalNewline": true,
+
+				// Colorize and highlight bracket pairs.
+				"editor.guides.bracketPairs": true,
+				"editor.bracketPairColorization.enabled": true,
+
+				// Require to confirm exit when the terminal is active (helps a lot when accidentally Cmd-Q pressed).
+				"terminal.integrated.confirmOnExit": "hasChildProcesses",
+
+				// Controls the maximum amount of lines the terminal keeps in its buffer.
+				// Increase to 50000. Default 1000 is too low.
+				"terminal.integrated.scrollback": 50000,
+
+				// Ruby LSP settings
+				"rubyLsp.formatter": "rubocop",
+				"rubyLsp.enableExperimentalFeatures": true,
+
+				// Ruby LSP advanced semantic highlighting.
+				"workbench.colorTheme": "Spinel",
+
+				// Ruby settings.
+				"[ruby]": {
+					"editor.formatOnSave": true,
+					"editor.formatOnType": true,
+					"editor.defaultFormatter": "Shopify.ruby-lsp",
+					"editor.rulers": [
+						120
+					],
+					"editor.tabSize": 2,
+					"editor.insertSpaces": true,
+					"editor.semanticHighlighting.enabled": true
+				},
+			},
+
+			// Add the IDs of extensions you want installed when the container is created in the array below.
+			"extensions": [
+				"shopify.ruby-extensions-pack",
+				"eamodio.gitlens",
+				"ms-azuretools.vscode-docker",
+				"davidanson.vscode-markdownlint",
+				"bierner.markdown-preview-github-styles",
+				"github.vscode-github-actions"
+			]
+		}
+	}
+}

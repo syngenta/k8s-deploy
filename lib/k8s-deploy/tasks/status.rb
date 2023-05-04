@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def print_deployment_status(configuration)
   deployment_name = configuration['kubernetes_deployment_name']
 
@@ -57,7 +59,7 @@ def print_docker_image_status(configuration)
 
   puts
   begin
-    time_utc = Time.strptime(timestamp + ' UTC', '%Y%m%d%H%M%S %Z')
+    time_utc = Time.strptime("#{timestamp} UTC", '%Y%m%d%H%M%S %Z')
     puts "Timestamp:\t#{color_output(:green) { timestamp }}"
     puts "Time (UTC):\t#{time_utc}"
     puts "Time (local):\t#{time_utc.getlocal}"

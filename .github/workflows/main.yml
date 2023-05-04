@@ -1,0 +1,28 @@
+name: Test Suite
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  overcommit:
+    runs-on: ubuntu-latest
+    name: Overcommit checks
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+          bundler-cache: true
+      - name: Overcommit checks
+        # NOTE: Set to make Overcommit's AuthorName and AuthorEmail checks happy.
+        env:
+          GIT_AUTHOR_NAME: example
+          GIT_AUTHOR_EMAIL: example@example.com
+        run: |
+          bundle exec overcommit --sign --force
+          SKIP=ForbiddenBranches bundle exec overcommit --run
