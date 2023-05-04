@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = 'k8s-deploy — automate deployments to Google Kubernetes Engine'
   spec.description = 'Automate deployments to Google Kubernetes Engine (GKE)'
-  spec.homepage = 'https://github.com/cropio/k8s-deploy'
+  spec.homepage = 'https://github.com/syngenta/k8s-deploy'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 2.0.0'
 
@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
     'homepage_uri' => spec.homepage,
     'source_code_uri' => spec.homepage,
     'documentation_uri' => spec.homepage,
-    'bug_tracker_uri' => 'https://github.com/cropio/k8s-deploy/issues',
+    'bug_tracker_uri' => 'https://github.com/syngenta/k8s-deploy/issues',
     'rubygems_mfa_required' => 'true'
   }
 

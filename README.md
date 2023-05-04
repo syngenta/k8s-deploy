@@ -132,7 +132,7 @@ rake k8s:<environment>:scale[1]
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [https://github.com/cropio/k8s-deploy](https://github.com/cropio/k8s-deploy).
+Bug reports and pull requests are welcome on GitHub at [https://github.com/syngenta/k8s-deploy](https://github.com/syngenta/k8s-deploy).
 
 Please, check our [Contribution guide](CONTRIBUTING.md) for more details.
 
