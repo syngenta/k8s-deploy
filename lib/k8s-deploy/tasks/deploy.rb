@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 def build_timestamp
   CURRENT_TIME.strftime('%Y%m%d%H%M%S')
 end
 
 def build_tag_name(git_hash)
-  build_timestamp + '-' + git_hash
+  "#{build_timestamp}-#{git_hash}"
 end
 
 def get_git_hash(configuration)
@@ -91,16 +93,15 @@ def print_deploy_deployment_patch(configuration)
 
   print color_output(:yellow) { 'Confirm deploy (y/N): ' }
 
-  case STDIN.gets.strip
+  puts
+  case $stdin.gets.strip
   when 'Y', 'y', 'Yes', 'yes'
-    puts
     puts color_output(:green) { 'Starting deploy...' }
     system command
     puts
     puts 'Now you can check deploy status with ' \
          "#{color_output(:yellow) { 'status' }} command."
   else
-    puts
     puts color_output(:red) { 'Deploy terminated.' }
     exit 1
   end

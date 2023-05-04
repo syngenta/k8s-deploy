@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 CONFIGURATION_OPTIONS = {
   'git_branch' => 'GIT branch',
   'dockerfile' => 'Path to Dockerfile',
@@ -13,10 +15,10 @@ CONFIGURATION_OPTIONS = {
 def validate_configuration(configuration)
   missed_parameters = CONFIGURATION_OPTIONS.keys - configuration.keys
 
-  unless missed_parameters.empty?
-    params_string = missed_parameters.join(', ')
-    raise "Missed parameters in configuration: #{params_string}."
-  end
+  return if missed_parameters.empty?
+
+  params_string = missed_parameters.join(', ')
+  raise "Missed parameters in configuration: #{params_string}."
 end
 
 def print_configuration(configuration)

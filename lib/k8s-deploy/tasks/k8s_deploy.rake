@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 require 'yaml'
 require 'json'
 require 'time'
 
-require_relative 'console_formatters.rb'
-require_relative 'configuration.rb'
-require_relative 'status.rb'
-require_relative 'check.rb'
-require_relative 'deploy.rb'
+require_relative 'console_formatters'
+require_relative 'configuration'
+require_relative 'status'
+require_relative 'check'
+require_relative 'deploy'
 
 # Configuration file path
-CONFIGURATION_FILE = 'k8s-deploy.yml'.freeze
+CONFIGURATION_FILE = 'k8s-deploy.yml'
 
 # Get start time
 CURRENT_TIME = Time.now.utc
