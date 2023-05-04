@@ -4,5 +4,5 @@
 class K8sDeploy
   ##
   # @return [String] the library version
-  VERSION = '0.0.5'
+  VERSION = '0.0.6'
 end
