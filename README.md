@@ -140,4 +140,4 @@ This project adheres to the [Code of Conduct](CODE_OF_CONDUCT.md). We pledge to 
 
 ## License
 
-The project uses the MIT License. See LICENSE for details.
+The project uses the MIT License. See [LICENSE](LICENSE) for details.
