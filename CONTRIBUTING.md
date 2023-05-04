@@ -15,7 +15,7 @@ This project adheres to the [Code of Conduct](CODE_OF_CONDUCT.md). We pledge to 
 
 ## Reporting issues
 
-Please, report any issues or bugs you find in the project's [Issues](https://github.com/cropio/k8s-deploy/issues) section on GitHub.
+Please, report any issues or bugs you find in the project's [Issues](https://github.com/syngenta/k8s-deploy/issues) section on GitHub.
 
 ## Contributing to code
 
@@ -56,7 +56,7 @@ The recommended way for local development is to use VSCode + Docker Desktop.
 VSCode supports `.devcontainer` configuration that will automatically build a full-featured dev environment for you. All plugins and hooks are already configured for you.
 
 ```shell
-git clone git@github.com:cropio/k8s-deploy.git
+git clone git@github.com:syngenta/k8s-deploy.git
 cd k8s-deploy
 
 code .
