@@ -4,7 +4,7 @@
 
 ### Added
 
-- Chore: Add CHANGELOG.md ([#6](https://github.com/syngenta/k8s-deploy/pull/6)).
+- Chore: Add CHANGELOG.md ([#7](https://github.com/syngenta/k8s-deploy/pull/7)).
 
 ## [0.0.6] - 2023-05-04
 
